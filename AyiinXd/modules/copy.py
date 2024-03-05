@@ -6,6 +6,7 @@
 """Userbot module containing commands for interacting with dogbin(https://del.dog)"""
 
 import os
+import re
 from telethon.errors.rpcerrorlist import (ChatForwardsRestrictedError,
                                           MediaEmptyError)
 from AyiinXd import CMD_HANDLER as cmd
