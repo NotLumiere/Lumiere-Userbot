@@ -78,7 +78,7 @@ async def get_restriced_msg(event):
     chat, msg = get_chat_and_msgid(match)
     if not (chat and msg):
         return await event.eor(
-            f"{get_string('gms_1')}!\nEg: `https://t.me/sfsdf/3 or `https://t.me/c/afdffd/3`"
+            f"{get_string('failed8')}!\nEg: `https://t.me/sfsdf/3 or `https://t.me/c/afdffd/3`"
         )
     try:
         message = await event.client.get_messages(chat, ids=msg)
@@ -109,7 +109,7 @@ async def get_restriced_msg(event):
 CMD_HELP.update(
     {
         "copy": f"**Plugin : **`copy`\
-        \n\n  »  **Perintah :** `{cmd}copy` <link>\ 
+        \n\n  »  **Perintah :** `{cmd}copy` <link>\
         \n  »  **Kegunaan : **Untuk Mengcopy pesan/media\
         \n\n  »  **Perintah :** `{cmd}paste` <text/reply>\
         \n  »  **Kegunaan : **Untuk Menyimpan text ke ke layanan pastebin gunakan flags [`-d`, `-n`, `-h`, `-s`, `-k`]\
