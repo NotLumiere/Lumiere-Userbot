@@ -24,6 +24,15 @@ try:
 except ImportError:
     WebShot = None
 
+def get_chat_and_msgid(link):
+    matches = re.findall("https:\\/\\/t\\.me\\/(c\\/|)(.*)\\/(.*)", link)
+    if not matches:
+        return None, None
+    _, chat, msg_id = matches[0]
+    if chat.isdigit():
+        chat = int("-100" + chat)
+    return chat, int(msg_id)
+
 @ayiin_cmd(pattern="paste(?: (-d|-n|-h|-k|-s)|$)?(?: ([\\s\\S]+)|$)")
 async def paste(pstl):
     """For .paste command, pastes the text directly to a pastebin."""
