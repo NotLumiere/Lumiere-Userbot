@@ -310,7 +310,7 @@ del _WHITELIST
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "Lumiere-Userbot"
+    session = "LumiereUserBot"
 try:
     bot = TelegramClient(
         session=session,
@@ -319,6 +319,7 @@ try:
         connection=ConnectionTcpAbridged,
         auto_reconnect=True,
         connection_retries=None,
+        device_model="Lumiere-Userbot",
     )
 except Exception as e:
     print(f"STRING_SESSION - {e}")
