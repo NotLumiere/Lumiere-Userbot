@@ -6,7 +6,7 @@ from telethon.errors import rpcerrorlist
 
 from .logger import logging
 from .tools import edit_delete
-
+from AyiinXd import bot
 LOGS = logging.getLogger(__name__)
 
 
