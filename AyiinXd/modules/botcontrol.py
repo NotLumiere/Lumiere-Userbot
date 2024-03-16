@@ -6,9 +6,10 @@
 
 import io
 import re
+import sys
 import time
 from datetime import datetime
-from os import remove
+from os import remove, environ, execle
 
 import heroku3
 from telegraph import Telegraph, upload_file
@@ -36,7 +37,8 @@ from AyiinXd.modules.sql_helper.bot_starters import (
     get_starter_details,
 )
 from AyiinXd.modules.sql_helper.globals import gvarstatus
-from AyiinXd.ayiin import _format, asst_cmd, callback, reply_id
+from AyiinXd.ayiin import _format, asst_cmd, callback, reply_id, eor
+from Stringyins import get_string
 
 from .ping import get_readable_time
 
@@ -985,7 +987,15 @@ async def strten(event):
             f"**{name} Berhasil disettings**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
             buttons=get_back_button("multiclient"),
         )
-
+@callback(data=re.compile(b"restart"))
+async def restartclnt(event):
+    await conv.send_message(event, get_string("rstrt_1"))
+    if BOTLOG_CHATID:
+        await event.client.send_message(
+            BOTLOG_CHATID, get_string("rstrt_2")
+        )
+    args = [sys.executable, "-m", "AyiinXd"]
+    execle(sys.executable, *args, environ)
 
 @callback(data=re.compile(b"pingbot"))
 async def _(event):
@@ -1053,7 +1063,10 @@ async def bot_start(event):
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\
             \n**Apa ada yang bisa saya bantu?**"
         buttons = [
-            (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
+            (
+                Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),
+                Button.inline("Restart", data="restart"),
+            ),
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                 Button.inline("ᴜsᴇʀs", data="users"),
