@@ -186,6 +186,7 @@ async def botsettings(event):
                     Button.inline("ᴘɪɴɢ", data="pingbot"),
                     Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
                 ),
+                (Button.inline("Restart", data="restart"),),
                 (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
             ],
         )
@@ -988,7 +989,7 @@ async def strten(event):
             buttons=get_back_button("multiclient"),
         )
 @callback(data=re.compile(b"restart"))
-async def restartclnt(event):
+async def rest(event):
     await event.delete()
     pru = event.sender_id
     async with event.client.conversation(pru) as conv:
@@ -1069,7 +1070,6 @@ async def bot_start(event):
         buttons = [
             (
                 Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),
-                Button.inline("Restart", data="restart"),
             ),
             (
                 Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
@@ -1079,6 +1079,7 @@ async def bot_start(event):
                 Button.inline("ᴘɪɴɢ", data="pingbot"),
                 Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
             ),
+            (Button.inline("Restart", data="restart"),),
             (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
         ]
     try:
