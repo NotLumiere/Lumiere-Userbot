@@ -59,7 +59,7 @@ async def autopilot():
         r = await bot(
             CreateChannelRequest(
                 title="Lᴜᴍɪᴇʀᴇ-Usᴇʀʙᴏᴛ Lᴏɢs",
-                about="» Group log Created by: Lumiere Userbot\n\n» Support : @Lumieresupport\n» Support: @Gabutanlu",
+                about="» Group log Created by: Lumiere Userbot\n\n» Support : @Lumieresupport\n» Support: @Qwertystore",
                 megagroup=True,
             ),
         )
@@ -174,7 +174,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"× Owner ~ {who.first_name} ×\n\n× Powered By ~ @Gabutanlu ×"
+                bf, f"× Owner ~ {who.first_name} ×\n\n× Powered By ~ @Qwertystore ×"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
