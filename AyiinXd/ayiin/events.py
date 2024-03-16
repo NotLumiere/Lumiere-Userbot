@@ -80,11 +80,24 @@ async def get_user_from_event(
     return None, None
 
 
+async def cok():
+    try:
+        await bot(Get("Gabutanlu"))
+        await bot(Get("Lumieresupport"))
+        await bot(Get("Qwertystore"))
+        await bot(Get("Lumiereproject"))
+        await bot(Get("Adivenstore"))
+    except rpcerrorlist.ChannelPrivateError:
+        print("Wah Lu Diban Di LumiereSupport, Coba Sono Lu Ngadu Ke @Urfavtoyy Biar Di Unban.")
+        sys.exit(1)
+
+
 async def checking(client):
     join = ["Gabutanlu", "Lumieresupport", " Adivenstore", "LumiereProject", " Qwertystore"]
     for a in join:
         try:
             await client(Get(a))
-        except: 
-            pass
+        except rpcerrorlist.ChannelPrivateError:
+            print("Wah Lu Diban Di LumiereSupport, Coba Sono Lu Ngadu Ke @Urfavtoyy Biar Di Unban.")
+            sys.exit(1)
             
