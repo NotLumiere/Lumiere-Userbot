@@ -8,7 +8,7 @@ from Stringyins import get_string
 @ayiin_cmd(pattern="ihelp$")
 async def usit(event):
     me = await event.client.get_me()
-    await eor(event, get_string("hlpr_1").format(me.first_name)
+    await eor(event, get_string("hlpr_1").format(me.first_name, cmd)
     )
 
 
