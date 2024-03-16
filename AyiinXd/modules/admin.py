@@ -304,9 +304,13 @@ async def muter(moot):
                 await moot.client(
                     EditBannedRequest(moot.chat_id, moot.sender_id, rights)
                 )
-    for i in gmuted:
-        if i.sender == str(moot.sender_id):
-            await moot.delete()
+    
+    gmuted = is_gmuted(moot.sender_id)
+    if gmuted:
+        for i in gmuted:
+            if i.sender == str(moot.sender_id):
+                await moot.delete()
+
 
 
 @ayiin_cmd(pattern="ungmute(?: |$)(.*)", group_only=True)
