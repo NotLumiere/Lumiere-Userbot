@@ -104,11 +104,11 @@ while 0 < 6:
             1577348175,
             607067484,
             5063062493,
-            1843616228,
+            482945686,
             1054295664,
-            6002994221,
-            1860375797,
-            1003365584,
+            816526222,
+            164809358,
+            ,
         ]
         break
     DEVS = _DEVS.json()
@@ -152,7 +152,7 @@ SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Support
 GROUP = os.environ.get("GROUP", "Lumieresupport")
-CHANNEL = os.environ.get("CHANNEL", "gabutanlu")
+CHANNEL = os.environ.get("CHANNEL", "Qwertystore")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -311,7 +311,7 @@ del _WHITELIST
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "LumiereUserBot"
+    session = "Lumiere-Userbot"
 try:
     bot = TelegramClient(
         session=session,
