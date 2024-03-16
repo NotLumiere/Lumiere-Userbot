@@ -989,11 +989,15 @@ async def strten(event):
         )
 @callback(data=re.compile(b"restart"))
 async def restartclnt(event):
-    await conv.send_message(event, get_string("rstrt_1"))
-    if BOTLOG_CHATID:
-        await event.client.send_message(
-            BOTLOG_CHATID, get_string("rstrt_2")
-        )
+    await event.delete()
+    pru = event.sender_id
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(f"**Restarting Userbot, WAIT UNTIL IT DONE.**")
+        
+        if BOTLOG_CHATID:
+            await event.client.send_message(
+                BOTLOG_CHATID, get_string("rstrt_2")
+            )
     args = [sys.executable, "-m", "AyiinXd"]
     execle(sys.executable, *args, environ)
 
