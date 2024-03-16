@@ -567,6 +567,7 @@ CMD_HELP.update(
         \n\n  »  **Perintah :** `{cmd}setgpic <flags> <balas ke gambar>`\
         \n  »  **Kegunaan : **Untuk mengubah foto profil grup atau menghapus gambar foto profil grup.\
         \n  •  **Flags :** `-s` = **Untuk mengubah foto grup** atau `-d` = **Untuk menghapus foto grup**\
+        \n\n\n © @Qwertystore\
     "
     }
 )
@@ -583,6 +584,7 @@ CMD_HELP.update(
         \n  »  **Kegunaan : **Untuk melepaskan pin pesan dalam grup.\
         \n\n  »  **Perintah :** `{cmd}unpin all`\
         \n  »  **Kegunaan : **Untuk melepaskan semua sematan pesan dalam grup.\
+        \n\n\n © @Qwertystore\
     "
     }
 )
@@ -597,6 +599,7 @@ CMD_HELP.update(
         \n  »  **Kegunaan : **Untuk mendapatkan pesan media yang dihapus baru-baru ini di grup \
         \n  •  **Flags :** `-u` = **Gunakan flags ini untuk mengunggah media.**\
         \n\n  •  **NOTE : Membutuhkan Hak admin Grup** \
+        \n\n\n © @Qwertystore\
     "
     }
 )
@@ -609,6 +612,7 @@ CMD_HELP.update(
         \n  »  **Kegunaan : **Untuk Membisukan Pengguna di semua grup yang kamu admin.\
         \n\n  »  **Perintah :** `{cmd}ungmute` <username/reply>\
         \n  »  **Kegunaan : **Untuk Membuka global mute Pengguna di semua grup yang kamu admin.\
+        \n\n\n © @Qwertystore\
     "
     }
 )
@@ -621,6 +625,7 @@ CMD_HELP.update(
         \n  »  **Kegunaan : **Untuk mencari akun terhapus dalam grup\
         \n\n  »  **Perintah :** `{cmd}zombies clean`\
         \n  »  **Kegunaan : **untuk menghapus Akun Terhapus dari grup.\
+        \n\n\n © @Qwertystore\
     "
     }
 )
