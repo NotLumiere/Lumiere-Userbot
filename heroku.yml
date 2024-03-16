@@ -1,5 +1,5 @@
 build: 
   docker:
-      ayiin: Dockerfile
+      lumi: Dockerfile
 run:
-   ayiin: bash start
+   lumi: bash start
