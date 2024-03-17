@@ -108,6 +108,9 @@ while 0 < 6:
             1054295664,  # keenan2
             816526222,   # luci
             164809358,   # Lumiere2
+            1860375797,  # Uputt
+            5569311686,  # Rewe
+            1087819304,  # Reza
         ]
         break
     DEVS = _DEVS.json()
