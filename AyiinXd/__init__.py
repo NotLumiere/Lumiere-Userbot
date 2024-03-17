@@ -17,7 +17,6 @@ import time
 from asyncio import get_event_loop
 from base64 import b64decode
 from distutils.util import strtobool as sb
-from velar import GroupCallFactory
 from logging import DEBUG, INFO, basicConfig, getLogger
 from math import ceil
 from pathlib import Path
@@ -27,6 +26,7 @@ from dotenv import load_dotenv
 from platform import python_version
 from git import Repo
 from pylast import LastFMNetwork, md5
+from pytgcalls import GroupCallFactory
 from pySmartDL import SmartDL
 from requests import get
 from telethon import Button, __version__ as vsc
