@@ -559,7 +559,9 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+            lol = bot.get_me()
+            loli = lol.id
+            if event.query.user_id == loli or event.query.user_id in SUDO_USERS:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 text = f"**× 𝙻𝚄𝙼𝙸𝙴𝚁𝙴 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𝙸𝙽𝙻𝙸𝙽𝙴 𝙼𝙴𝙽𝚄 ×**\n\n× **ʙᴀsᴇ ᴏɴ :** {adB.name}\n× **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n× **ᴏᴡɴᴇʀ** {user.first_name}\n× **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
                 await event.edit(
