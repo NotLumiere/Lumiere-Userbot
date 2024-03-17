@@ -324,6 +324,17 @@ try:
         connection_retries=None,
         device_model="Lumiere-Userbot",
     )
+        setattr(
+        bot,
+        "calls",
+        GroupCallFactory(
+            bot,
+            GroupCallFactory.MTPROTO_CLIENT_TYPE.TELETHON,
+        ).get_group_call()
+    )
+except Exception as e:
+    print(f"STRING_SESSION - {e}")
+    sys.exit()
 except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
@@ -573,55 +584,6 @@ with bot:
                     link_preview=False,
                     text=f"**× 𝙻𝚄𝙼𝙸𝙴𝚁𝙴 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𝙸𝙽𝙻𝙸𝙽𝙴 𝙼𝙴𝙽𝚄 ×**\n\n× **ʙᴀsᴇ ᴏɴ :** {adB.name}\n× **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n× **ᴏᴡɴᴇʀ :** {user.first_name}\n× **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**",
                     buttons=main_help_button,
-                )
-            elif query.startswith("repo"):
-                result = builder.article(
-                    title="Repository",
-                    description="Repository ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ",
-                    url="https://t.me/Lumieresupport",
-                    thumb=InputWebDocument(
-                        INLINE_PIC,
-                        0,
-                        "image/jpeg",
-                        []),
-                    text="×ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ×\n➖➖➖➖➖➖➖➖➖➖\n✧  **ʀᴇᴘᴏ :** [ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ](https://t.me/Strangedocx)\n✧ **sᴜᴘᴘᴏʀᴛ :** @Lumieresupport\n✧ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Lumiere-userbot](https://github.com/NotLumiere/Lumiere-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
-                    buttons=[
-                        [
-                            custom.Button.url(
-                                "ɢʀᴏᴜᴘ",
-                                "https://t.me/Lumieresupport"),
-                            custom.Button.url(
-                                "ʀᴇᴘᴏ",
-                                "https://github.com/NotLumiere/Lumiere-Userbot"),
-                        ],
-                    ],
-                    link_preview=False,
-                )
-            elif query.startswith("string"):
-                result = builder.article(
-                    title="String",
-                    description="String ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ",
-                    url="https://t.me/Lumieresupport",
-                    thumb=InputWebDocument(
-                        logoyins,
-                        0,
-                        "image/jpeg",
-                        []),
-                    text=get_string("lang_4"),
-                    buttons=[
-                        [
-                            custom.Button.url(
-                                "Bᴏᴛ Sᴛʀɪɴɢ",
-                                url="https://t.me/Makimastringbot?start="),
-                            custom.Button.url(
-                                "Sᴛʀɪɴɢ Rᴇᴘʟɪᴛ",
-                                url="https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
-                        ],
-                        [
-                            custom.Button.url("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Lumieresupport"),
-                        ],
-                    ],
-                    link_preview=False,
                 )
             elif query.startswith("lang"):
                 languages = get_languages()
