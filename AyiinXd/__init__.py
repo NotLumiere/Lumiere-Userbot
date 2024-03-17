@@ -324,7 +324,7 @@ try:
         connection_retries=None,
         device_model="Lumiere-Userbot",
     )
-        setattr(
+    setattr(
         bot,
         "calls",
         GroupCallFactory(
