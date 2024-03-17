@@ -33,16 +33,16 @@ async def ayiin_client(client):
 
 
 def multiayiin():
-    if 1992087933 not in DEVS:
-        LOGS.warning(EOL.format(version))
-        sys.exit(1)
-    if -1001876092598 not in GBL:
-        LOGS.warning(EOL.format(version))
-        sys.exit(1)
-    if 1329377873 not in DEFAULT:
-        LOGS.warning(EOL.format(version))
-        sys.exit(1)
-    failed = 0
+    #if 1992087933 not in DEVS:
+        #LOGS.warning(EOL.format(version))
+        #sys.exit(1)
+    #if -1001876092598 not in GBL:
+        #LOGS.warning(EOL.format(version))
+        #sys.exit(1)
+    #if 1329377873 not in DEFAULT:
+       # LOGS.warning(EOL.format(version))
+       # sys.exit(1)
+    #failed = 0
     if STRING_SESSION:
         try:
             bot.start()
