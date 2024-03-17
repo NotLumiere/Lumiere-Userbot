@@ -575,9 +575,10 @@ with bot:
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
+            oner = user.id
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith(
+            if event.query.user_id == oner and query.startswith(
                     "@Lumieresupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = await event.builder.photo(
