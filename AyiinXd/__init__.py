@@ -613,7 +613,7 @@ with bot:
                     buttons=buttons,
                     link_preview=False,
                 )
-            elif query.startswith("Inline buttons"):
+            elif query.startswith("ini gausah"):
                 markdown_note = query[14:]
                 prev = 0
                 note_data = ""
