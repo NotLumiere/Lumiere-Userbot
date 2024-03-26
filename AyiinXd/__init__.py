@@ -559,9 +559,7 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            lol = bot.get_me()
-            loli = lol.id
-            if event.query.user_id == loli or event.query.user_id in SUDO_USERS:
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 text = f"**× 𝙻𝚄𝙼𝙸𝙴𝚁𝙴 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𝙸𝙽𝙻𝙸𝙽𝙴 𝙼𝙴𝙽𝚄 ×**\n\n× **ʙᴀsᴇ ᴏɴ :** {adB.name}\n× **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n× **ᴏᴡɴᴇʀ** {user.first_name}\n× **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
                 await event.edit(
@@ -577,11 +575,9 @@ with bot:
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
-            lol = bot.get_me()
-            loli = lol.id
             result = None
             query = event.text
-            if event.query.user_id == loli and query.startswith(
+            if event.query.user_id == uid and query.startswith(
                     "YeeMemeg"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = await event.builder.photo(
