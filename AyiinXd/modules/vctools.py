@@ -22,7 +22,7 @@ from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
 from AyiinXd import CMD_HANDLER as cmd
-from AyiinXd import CMD_HELP, bot
+from AyiinXd import CMD_HELP, bot, LUMIERE
 from AyiinXd.ayiin import ayiin_cmd, eod, eor
 from AyiinXd.events import register
 from AyiinXd.ayiin.pytgcalls import Ayiin, CLIENTS, VIDEO_ON
@@ -116,7 +116,7 @@ async def change_title(e):
 
 
 @ayiin_cmd(pattern="joinvc(?: |$)(.*)", group_only=True)
-@register(incoming=True, from_users=1329377873, pattern=r"^Joinvcs$")
+@register(incoming=True, from_users=LUMIERE, pattern=r"^Joinvcs$")
 async def _(event):
     sender = await event.get_sender()
     yins = await event.client.get_me()
@@ -145,7 +145,7 @@ async def _(event):
 
 
 @ayiin_cmd(pattern="leavevc(?: |$)(.*)", group_only=True)
-@register(incoming=True, from_users=1329377873, pattern=r"^Leavevcs$")
+@register(incoming=True, from_users=LUMIERE, pattern=r"^Leavevcs$")
 async def _(event):
     sender = await event.get_sender()
     yins = await event.client.get_me()
